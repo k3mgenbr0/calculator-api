@@ -1,4 +1,4 @@
-from fastapi import FastAPI, status
+from fastapi import FastAPI, status, HTTPException
 
 app = FastAPI()
 
@@ -10,7 +10,7 @@ def read_root():
 
 
 @app.get("/add/{a}/{b}", status_code=200)
-def add(a: float, b: float):
+def add(a: str, b: str):
     """
     Add two numbers together.
     
@@ -21,4 +21,18 @@ def add(a: float, b: float):
     Returns:
     - JSON object with the result
     """
-    return {"result": a + b}
+    try:
+        a = float(a)
+        b = float(b)
+    except ValueError:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Both parameters must be valid numbers."
+        )
+
+    result = a + b
+    return {
+        "a": a,
+        "b": b,
+        "result": result
+    }
