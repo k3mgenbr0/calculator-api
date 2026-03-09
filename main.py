@@ -171,7 +171,7 @@ def average(a: str, b: str, c: str, d: str, e: str):
     }    
 
 import math
- ca
+
 @app.get("/hypotenuse/{a}/{b}", status_code=200)
 def hypotenuse(a: str, b: str):
     """
