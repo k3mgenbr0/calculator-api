@@ -135,7 +135,7 @@ def divide(a: str, b: str):
 @app.get("/average/{a}/{b}/{c}/{d}/{e}", status_code=200)
 def average(a: str, b: str, c: str, d: str, e: str):
     """
-    Calculate the average of three numbers.
+    Calculate the average of five numbers.
 
     Parameters:
     - a: First number
