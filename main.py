@@ -145,7 +145,7 @@ def average(a: str, b: str, c: str, d: str, e: str):
     - e: Fifth number
 
     Returns:
-    - JSON object containing the three inputs and their average
+    - JSON object containing the five inputs and their average
     """
     try:
         a = float(a)
@@ -171,7 +171,7 @@ def average(a: str, b: str, c: str, d: str, e: str):
     }    
 
 import math
-
+ ca
 @app.get("/hypotenuse/{a}/{b}", status_code=200)
 def hypotenuse(a: str, b: str):
     """
